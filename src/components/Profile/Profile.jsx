@@ -3,7 +3,6 @@ import { ProfileStats } from './ProfileStats';
 import css from './Profile.module.css';
 
 export const Profile = ({ user }) => {
-  console.log(user.stats);
   return (
     <div className={css.profile}>
       <ProfileDescription

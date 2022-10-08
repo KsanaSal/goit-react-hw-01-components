@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import css from './ProfileStats.module.css';
 
 const ProfileStats = ({ stats: { followers, views, likes } }) => {
-  console.log(followers);
   return (
     <ul className={css.stats}>
       <li>
