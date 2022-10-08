@@ -1,19 +1,19 @@
 import { ProfileDescription } from './ProfileDescription';
 import { ProfileStats } from './ProfileStats';
+import css from './Profile.module.css';
 
-export const Profile = ({user}) => {
-  console.log(user);
+export const Profile = ({ user }) => {
+  console.log(user.stats);
   return (
-    <div className="profile">
+    <div className={css.profile}>
       <ProfileDescription
         username={user.username}
         tag={user.tag}
         location={user.location}
         avatar={user.avatar}
-        
       />
 
-      <ProfileStats stats={user.stats}/>
+      <ProfileStats stats={user.stats} />
     </div>
   );
 };

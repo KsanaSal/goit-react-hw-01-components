@@ -1,28 +1,32 @@
 import PropTypes from 'prop-types';
+import css from './ProfileStats.module.css';
 
 const ProfileStats = ({ stats: { followers, views, likes } }) => {
+  console.log(followers);
   return (
-    <ul className="stats">
+    <ul className={css.stats}>
       <li>
-        <span className="label">Followers</span>
-        <span className="quantity">{followers}</span>
+        <span className={css.label}>Followers</span>
+        <span className={css.quantity}>{followers}</span>
       </li>
       <li>
-        <span className="label">Views</span>
-        <span className="quantity">{views}</span>
+        <span className={css.label}>Views</span>
+        <span className={css.quantity}>{views}</span>
       </li>
       <li>
-        <span className="label">Likes</span>
-        <span className="quantity">{likes}</span>
+        <span className={css.label}>Likes</span>
+        <span className={css.quantity}>{likes}</span>
       </li>
     </ul>
   );
 };
 
 ProfileStats.propTypes = {
-  followers: PropTypes.number,
-  views: PropTypes.number,
-  likes: PropTypes.number,
+  stats: PropTypes.exact({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
 };
 
 export { ProfileStats };
